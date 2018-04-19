@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All products{% endblock %}
+
+{% block body %}
+{% for product in products %}
+
+<div class="container">
+
+    <div class="row">
+      <div class="col-md-3">
+         <div class="product-box">
+          <h3>{{ product.title }}</h3>
+            <p>{{ product.body | slice(0, 145) }}</p>
+              <div class="btn-group">
+                <a href="/product/{{product.id}}" class="btn btn-success">Show</a>
+                <a href="/product/edit/{{product.id}}" class="btn btn-primary">Edit</a>
+              </div>
+          </div>
+        
+      </div>
+{% endfor %}
+{% endblock %}
+

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin page{% endblock %}
+
+
+
+{% block body %}
+<table class="table table-striped">
+    <thead>
+      <tr>
+          <th>
+              Product name
+          </th>
+          <th>
+              Action
+          </th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.title }}</td>
+            <td>
+                <a href="/admin/delete/{{product.id}}" class="btn btn-danger">delete</a>
+           </td>
+            
+        </tr>
+        {% endfor %}
+{% endblock %}
+
+
+
+

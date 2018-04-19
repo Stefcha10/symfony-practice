@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('style.css') }}">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+            <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                      <div class="navbar-header">
+                        <a class="navbar-brand" href="{{ path('home')}}">Products</a>
+                      </div>
+                      <ul class="nav navbar-nav">
+                        <li><a href="{{ path('home')}}">Home</a></li>
+                        <li><a href="{{ path('add_product')}}">Add product</a></li>
+                      </ul>
+
+                      <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{ path('admin')}}">Admin</a></li>
+                        <li><a href="#">Login</a></li>
+                      </ul>
+                    </div>
+                  </nav>
+        <div class="container">          
+        {% block body %}{% endblock %}
+        </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

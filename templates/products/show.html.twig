@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{product.title}}{% endblock %}
+
+
+
+{% block body %}
+<h1>{{ product.title }}</h1>
+<p class="single-product">{{ product.body }}</p>
+<hr>
+
+<a href="/home" class="btn btn-default">Go back</a>
+
+{% endblock %}
+   
+ 
