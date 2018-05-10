@@ -17,7 +17,7 @@ class AdminController extends Controller
     public function show (){
 
         $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
-    
+
         return $this->render('admin/show.html.twig', [
             'products' => $products
         ]);
@@ -27,7 +27,6 @@ class AdminController extends Controller
      * @Route("/admin/delete/{id}", name="delete_product")
      * Method({"GET", "POST"})
      */
-
     public function delete(Request $request, $id){
         
         
@@ -36,6 +35,8 @@ class AdminController extends Controller
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($product);
         $entityManager->flush();
+
+        $this->addFlash('danger', 'Product deleted !');
 
         return $this->redirectToRoute('home');
 

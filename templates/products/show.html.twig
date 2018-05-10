@@ -5,11 +5,18 @@
 
 
 {% block body %}
+<div class="container">
+<div class="row">
+<div class="col-md-3">
+<img src=" {{asset('uploads/images/' ~ product.image)}}" class="img-responsive">
+</div>
+<div class="col-md-9">
 <h1>{{ product.title }}</h1>
 <p class="single-product">{{ product.body }}</p>
 <hr>
 
 <a href="/home" class="btn btn-default">Go back</a>
+</div>
 
 {% endblock %}
    

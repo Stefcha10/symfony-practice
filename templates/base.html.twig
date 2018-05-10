@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="{{ asset('style.css') }}">
         {% block stylesheets %}{% endblock %}
     </head>
@@ -19,8 +20,10 @@
                       </ul>
 
                       <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{{ path('admin')}}">Admin</a></li>
-                        <li><a href="#">Login</a></li>
+                          <li><a href="{{ path('admin') }}">Admin</a></li>
+                          {% if is_granted('ROLE_ADMIN') %}
+                              <li><a href="{{ path('logout') }}">Logout</a></li>
+                          {% endif %}
                       </ul>
                     </div>
                   </nav>

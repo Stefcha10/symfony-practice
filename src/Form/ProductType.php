@@ -9,7 +9,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+
 
 class ProductType extends AbstractType
 {
@@ -17,7 +18,8 @@ class ProductType extends AbstractType
     {
         $builder
         ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
-        ->add('body', TextAreaType::class, array('attr' => array('class' => 'form-control')));
+        ->add('body', TextAreaType::class, array('attr' => array('class' => 'form-control', 'rows' => 5 ,)))
+        ->add('image', FileType::class, array('label' => 'Product image', 'attr' => array('class' => 'form-control')));
     }
 
     public function configureOptions(OptionsResolver $resolver)

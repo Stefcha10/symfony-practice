@@ -3,22 +3,30 @@
 {% block title %}All products{% endblock %}
 
 {% block body %}
+
 {% for product in products %}
 
-<div class="container">
+{% include('flash-messages.html.twig') %}
 
-    <div class="row">
-      <div class="col-md-3">
-         <div class="product-box">
-          <h3>{{ product.title }}</h3>
-            <p>{{ product.body | slice(0, 145) }}</p>
-              <div class="btn-group">
+<div class="container">
+<div class="row">
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail product-box">
+          <div class="product-img">
+          <img src=" {{asset('uploads/images/' ~ product.image)}}" class="img-responsive">
+          </div>
+          <div class="caption">
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.body | slice(0, 82) }}</p>
+            <div class="btn-group">
                 <a href="/product/{{product.id}}" class="btn btn-success">Show</a>
                 <a href="/product/edit/{{product.id}}" class="btn btn-primary">Edit</a>
-              </div>
+            </div>
           </div>
-        
       </div>
+    </div>
+
+  
 {% endfor %}
 {% endblock %}
 

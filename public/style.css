@@ -1,5 +1,5 @@
 .product-box {
-    margin: 50px 0 50px 0;
+    margin-top: 50px;
 }
 
 .single-product {
@@ -8,4 +8,23 @@
 
 .butt2 {
     margin-top: 10px;
+}
+
+.product-img img {
+    width: 100%;
+    min-height: 200px;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+.alert {
+    text-align: center;
+    font-size: 17px;
+    width: 550px;
+    margin: 0 auto;
+}
+
+.login_form {
+    max-width: 450px;
+    margin: 0 auto;
 }

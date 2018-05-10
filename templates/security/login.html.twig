@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% include('flash-messages.html.twig') %}
+    <form class="login_form" action="{{ path('login') }}" method="post">
+        <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+        <label for="username" class="sr-only">Username</label>
+        <input type="text" id="_username" name="_username" class="form-control" placeholder="Username" required autofocus>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="_password" name="_password" class="form-control" placeholder="Password" required autofocus><br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+{% endblock %}
